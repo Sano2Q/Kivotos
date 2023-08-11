@@ -19,7 +19,7 @@ public class MainServlet extends HttpServlet {
 
         Context context = new Context();
         context.setVariable("member", member);
-        ThUtil.print(context,response, "student/main.html");
+        ThUtil.print(context,response, "student/index.html");
     }
 
     @Override
