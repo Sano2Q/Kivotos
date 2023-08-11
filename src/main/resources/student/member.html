@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>学生列表页面</title>
+    <link href="student/css/header.css" rel="stylesheet" />
+    <style>
+        .ta{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header id="top">
+        <div id="logo" class="lf">
+            <img src="student/img/logo.png" alt="logo" />
+        </div>
+        <div id="top_input" class="lf">
+            <form action="SelectAllMemberServlet" method="GET">
+                <input id="input" type="text" name="keyword" placeholder="请输入您要搜索的学生姓名/用户名">
+                <input type="submit" value="搜索" style="font-size: 16px">
+            </form>
+        </div>
+        <div class="rt">
+            <ul class="lf">
+                <li><a href="/Kivotos_war_exploded">首页</a><b>|</b></li>
+                <li><a href="SelectAllMemberServlet?keyword=">学生</a><b>|</b></li>
+                <li><a href="SelectAllClubServlet?keyword=">社团</a><b>|</b></li>
+                <li><a href="SelectAllActivityServlet?keyword=">活动</a><b>|</b></li>
+                <li><a href="CenterServlet">个人中心</a><b>|</b></li>
+                <li><a href="ToLogoutServlet">退出</a></li>
+            </ul>
+        </div>
+    </header>
+    <br><br><br><br>
+    <div class="ta">
+        <table align="center" border='1' cellspacing='0'>
+            <caption>学生信息表</caption>
+            <tr>
+                <th>编号</th>
+                <th>姓名</th>
+                <th>用户名</th>
+                <th>年龄（岁）</th>
+                <th>生日</th>
+                <th>身高（cm）</th>
+                <th>年级</th>
+                <th>兴趣爱好</th>
+                <th>社团</th>
+            </tr>
+            <tr th:each="m:${members}">
+                <td th:text="${m.mid}"></td>
+                <td th:text="${m.mname}"></td>
+                <td th:text="${m.username}"></td>
+                <td th:text="${m.age}"></td>
+                <td th:text="${m.birthday}"></td>
+                <td th:text="${m.height}"></td>
+                <td th:text="${m.grade}"></td>
+                <td th:text="${m.hobby}"></td>
+                <td th:text="${m.clubName}"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

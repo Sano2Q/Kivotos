@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>活动列表</title>
+    <link href="student/css/header.css" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: red;
+        }
+        
+        header {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+        }
+        header h1 {
+            color: #9a9897;
+        }
+        header hr {
+            margin: 20px 20px 0;
+            background-color: #bc9470;
+            border: 2px solid #bc9470;
+            width: 30%;
+            height: 0;
+        }
+        .adbt{ margin:0 auto; padding:20px;font-size:24px;  text-align:center;  }
+    
+        #adbt {
+            margin-left: 70px;
+        }
+        button {
+            margin: 20px 5px;
+            width: 85px;
+            height: 40px;
+            color: white;
+        }
+        button.gre {
+            background-color: #5cb85c;
+        }
+        button.red {
+            background-color: #d9534f;
+        }
+        #navigate {
+            padding: 0 70px;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+        }
+        #navigate p {
+            margin-top: 30px;
+        }
+        table {
+            margin: 0 auto;
+            width: 90%;
+            text-align: center;
+            border-spacing: 0;
+        }
+        table tbody tr:first-of-type {
+            background-color: #dadee1 !important;
+            height: 60px;
+        }
+        table tbody tr {
+            height: 45px;
+        }
+        table tbody tr:nth-child(odd) {
+            background-color: #eef1f8;
+        }
+        table tbody tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+        table tbody tr:not([id=thead]):hover {
+            cursor: pointer;
+            background-color: #e9e9e9;
+        }
+
+    </style>
+</head>
+<body>
+    <header id="top">
+        <div id="logo" class="lf">
+            <img src="student/img/logo.png" alt="logo" />
+        </div>
+        <div id="top_input" class="lf">
+            <form action="SelectAllActivityServlet" method="GET">
+                <input id="input" type="text" name="keyword" placeholder="请输入您要搜索的活动名称">
+                <input type="submit" value="搜索" style="font-size: 16px">
+            </form>
+        </div>
+        <div class="rt">
+            <ul class="lf">
+                <li><a href="/Kivotos_war_exploded">首页</a><b>|</b></li>
+                <li><a href="SelectAllMemberServlet?keyword=">学生</a><b>|</b></li>
+                <li><a href="SelectAllClubServlet?keyword=">社团</a><b>|</b></li>
+                <li><a href="SelectAllActivityServlet?keyword=">活动</a><b>|</b></li>
+                <li><a href="CenterServlet">个人中心</a><b>|</b></li>
+                <li><a href="ToLogoutServlet">退出</a></li>
+            </ul>
+        </div>
+    </header>
+    <br><br><br><br>
+    <div id="adbt">
+        <button class="gre" id="add"><a href="AddActivityServlet">添加</a></button>
+    </div>
+    <table>
+        <tbody>
+        <tr id="thead">
+            <td>编号</td>
+            <td>活动名称</td>
+            <td>活动简介</td>
+            <td>开始时间</td>
+            <td>截止时间</td>
+            <td>地点</td>
+            <td>参加人数</td>
+            <td>社团</td>
+            <td>负责人</td>
+            <td>操作1</td>
+            <td>操作2</td>
+        </tr>
+        <tr th:each="a:${activities}">
+            <td th:text="${a.aid}"></td>
+            <td th:text="${a.aname}"></td>
+            <td th:text="${a.asynopsis}"></td>
+            <td th:text="${a.starttime}"></td>
+            <td th:text="${a.endtime}"></td>
+            <td th:text="${a.place}"></td>
+            <td th:text="${a.anumber}"></td>
+            <td th:text="${a.clubName}"></td>
+            <td th:text="${a.aleader}"></td>
+            <td><a th:href="'DeleteActivityServlet?id='+${a.aid}" style='text-decoration:none'>删除</a></td>
+            <td><a th:href="'UpdateActivityServlet?id='+${a.aid}" style='text-decoration:none'>修改</a></td>
+        </tr>
+        </tbody>
+    </table>
+    <div id="navigate">
+        <p>第<span id="pgn">1</span>页,共<span id="en">1</span>条</p>
+        <div id="tpbt">
+            <button class="gre" id="lastpage">上一页</button>
+            <button class="red" id="nextpage">下一页</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>更新活动信息</title>
+</head>
+<body>
+    <div align="center">
+        <div style="font-size: 20px">修改活动信息</div>
+        <div style="font-size: 10px">(太累啦，不做啦，这个页面就这样吧)</div>
+        <br><br>
+        <form action='ToUpdateActivityServlet' method='get'>
+            <div>编号：<input readonly='readonly' name='aid' th:value="${activity.aid}" /></div>
+            <div>活动名称：<input type="text" name='aname' th:value="${activity.aname}" /></div>
+            <div>活动简介：<input type="text" name='asynopsis' th:value="${activity.asynopsis}" /></div>
+            <div>开始时间：<input type="date" name='starttime' th:value="${activity.starttime}" /></div>
+            <div>结束时间：<input type="date" name='endtime' th:value="${activity.endtime}" /></div>
+            <div>活动地点：<input type="text" name='place' th:value="${activity.place}" /></div>
+            <div>参与人数：<input type="number" name='anumber' th:value="${activity.anumber}" /></div>
+            <div>举办方社团：<input readonly='readonly' name='club' th:value="${activity.clubName}" /></div>
+            <div>负责人：<input type="text" name='aleader' th:value="${activity.aleader}" /></div>
+            <p><input type='submit' value='修改' /></p>
+        </form>
+    </div>
+</body>
+</html>

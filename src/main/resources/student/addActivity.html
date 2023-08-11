@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加活动</title>
+</head>
+<body>
+    <div align="center">
+        <div style="font-size: 20px">添加活动</div>
+        <div style="font-size: 10px">(太累啦，不做啦，这个页面就这样吧)</div>
+        <div style="font-size: 10px">(暴露了吧，复制粘贴的吧↑)</div>
+        <br><br>
+        <form action='ToAddActivityServlet' method='get'>
+            
+            <div>活动名称：<input type="text" name='aname' placeholder="请输入活动名称" /></div>
+            <div>活动简介：<input type="text" name='asynopsis' placeholder="请输入活动简介" /></div>
+            <div>开始时间：<input type="date" name='starttime' placeholder="请输入活动开始时间" /></div>
+            <div>结束时间：<input type="date" name='endtime' placeholder="请输入活动结束时间" /></div>
+            <div>活动地点：<input type="text" name='place' placeholder="请输入活动地点" /></div>
+            <div>参与人数：<input type="number" name='anumber' placeholder="请输入活动参与人数" /></div>
+            <div>举办方社团：<input type="number" name='club' placeholder="请输入举办方社团id" /></div>
+            <div>负责人：<input type="text" name='aleader' placeholder="请输入负责人姓名" /></div>
+            <p><input type='submit' value='添加' /></p>
+        </form>
+    </div>
+</body>
+</html>

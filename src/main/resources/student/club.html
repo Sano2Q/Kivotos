@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>社团信息列表</title>
+    <link href="student/css/header.css" rel="stylesheet" />
+    <style>
+        .ta{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header id="top">
+        <div id="logo" class="lf">
+            <img src="student/img/logo.png" alt="logo" />
+        </div>
+        <div id="top_input" class="lf">
+            <form action="SelectAllClubServlet" method="GET">
+                <input id="input" type="text" name="keyword" placeholder="请输入您要搜索的社团名称或学园名称">
+                <input type="submit" value="搜索" style="font-size: 16px">
+            </form>
+        </div>
+        <div class="rt">
+            <ul class="lf">
+                <li><a href="/Kivotos_war_exploded">首页</a><b>|</b></li>
+                <li><a href="SelectAllMemberServlet?keyword=">学生</a><b>|</b></li>
+                <li><a href="SelectAllClubServlet?keyword=">社团</a><b>|</b></li>
+                <li><a href="SelectAllActivityServlet?keyword=">活动</a><b>|</b></li>
+                <li><a href="CenterServlet">个人中心</a><b>|</b></li>
+                <li><a href="ToLogoutServlet">退出</a></li>
+            </ul>
+        </div>
+    </header>
+    <br><br><br><br>
+    <div class="ta">
+        <table align="center" border='1' cellspacing='0'>
+            <caption>社团信息表</caption>
+            <tr>
+                <th>编号</th>
+                <th>名称</th>
+                <th>简介</th>
+                <th>学园</th>
+                <th>人数</th>
+                <th>社长</th>
+            </tr>
+            <tr th:each="c:${clubs}">
+                <td th:text="${c.cid}"></td>
+                <td th:text="${c.cname}"></td>
+                <td th:text="${c.csynopsis}"></td>
+                <td th:text="${c.academy}"></td>
+                <td th:text="${c.cnumber}"></td>
+                <td th:text="${c.cleader}"></td>
+            </tr>
+        </table>
+    </div>
+    
+</body>
+</html>

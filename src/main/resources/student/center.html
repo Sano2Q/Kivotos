@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>个人中心</title>
+    <link href="student/css/header.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+    
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+    
+        .profile {
+            text-align: center;
+        }
+    
+        .profile img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            position: relative;
+            left: 80px;
+        }
+    
+        .profile h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+    
+        .profile p {
+            margin-bottom: 5px;
+        }
+    
+        .bio h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+    
+        .bio p {
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <header id="top">
+        <div id="logo" class="lf">
+            <img src="student/img/logo.png" alt="logo" />
+        </div>
+        <div id="top_input" class="lf">
+            <form id="form">
+                <input id="input" type="text" name="keyword" placeholder="猜你想搜：如何抽查学生学历有没有水分？">
+                <input type="submit" value="搜索" style="font-size: 16px">
+            </form>
+        </div>
+        <div class="rt">
+            <ul class="lf">
+                <li><a href="/Kivotos_war_exploded">首页</a><b>|</b></li>
+                <li><a href="SelectAllMemberServlet?keyword=">学生</a><b>|</b></li>
+                <li><a href="SelectAllClubServlet?keyword=">社团</a><b>|</b></li>
+                <li><a href="SelectAllActivityServlet?keyword=">活动</a><b>|</b></li>
+                <li><a href="CenterServlet">个人中心</a><b>|</b></li>
+                <li><a href="ToLogoutServlet">退出</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="container">
+        <div class="profile">
+            <div id="img"><img src="student/img/center.png" alt="个人照片"></div>
+            <h1 th:text="'姓名:'+${member.mname}"></h1>
+            <p th:text="'用户名:'+${member.username}"></p>
+        </div>
+        <div class="bio">
+            <h2>About Me</h2>
+            <p  id="age" th:text="'年龄:'+${member.age}"></p>
+            <p th:text="'生日:'+${member.birthday}"></p>
+            <p th:text="'身高:'+${member.height}+'cm'"></p>
+            <a th:href="'SelectAllClubServlet?keyword='+${member.clubName}"><p th:text="'社团:'+${member.clubName}"></p></a>
+            <p th:text="'年级:'+${member.grade}"></p>
+            <p th:text="'爱好:'+${member.hobby}"></p>
+        </div>
+    </div>
+    <script>
+        var form = document.getElementById("form");
+        var img = document.getElementById("img");
+        var age = document.getElementById("age")
+        form.addEventListener("submit", function () {
+            alert("你搜个寄吧！");
+        });
+        img.onclick = function (){
+            alert("点什么点？信不信头都给你薅下来！");
+        }
+        age.onclick = function (){
+            alert("咋滴？不相信我的年龄？");
+        }
+    </script>
+</body>
+</html>

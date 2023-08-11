@@ -1,0 +1,75 @@
+/*去除所有元素的内外边距和列表样式*/
+*{
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style: none;
+}
+/*给出框的大小*/
+#banner{
+	/*margin-left: 400px;*/
+	/*margin-top: 50px;*/
+	width: 704px;
+	height: 396px;
+	border: 2px solid #999;
+	/*将超出框的图片隐藏*/
+	overflow: hidden;
+	/*父元素改非默认，当前元素位置绝对定位*/
+	position: relative;
+}
+/*图片列表，width为框的图片个数倍*/
+#imglist{
+	width: 4224px;
+	height: 396px;
+}
+/*限制图片大小*/
+#imglist img{
+	width: 704px;
+	height: 396px;
+}
+
+/*设置列表li左浮动图片横排*/
+#imglist li{
+	float: left;
+}
+.prev{
+	background: rgba(102, 102, 102, 0.5);
+	width: 25px;
+	height: 40px;
+	color: #fff;
+	text-align: center;
+	line-height: 40px;
+	position: absolute;
+	left: 0px;
+	top: 45%;
+	cursor: pointer;
+}
+.next{
+	background: rgba(red, green, blue, 50%);
+	width: 25px;
+	height: 40px;
+	color: #fff;
+	text-align: center;
+	line-height: 40px;
+	position: absolute;
+	right: 0px;
+	top: 45%;
+	cursor: pointer;
+}
+#icolist{
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+}
+#icolist li{/*设置宽高50做出圆角50%的圆效果*/
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	text-align: center;
+	background: #999;
+	line-height: 30px;
+	color: #fff;
+	float: left;
+	margin-left: 5px;
+	cursor: pointer;
+}

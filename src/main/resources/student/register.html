@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学生信息注册页面</title>
+    <link rel="stylesheet" type="text/css" href="student/css/register.css" media="all" />
+    <style>
+        body{
+            background: url('student/img/背景.png');
+            /*background-size:100% 120%;*/
+            /*background-attachment: fixed*/
+            background-origin:content-box;
+            background-position:50% 50%;/*图片上下左右居中*/
+            background-size:contain;/*保持图像本身的宽高比例，缩放图片至宽度或高度正好适应定义背景的区域*/
+            background-size:cover;/*覆盖填充，将图片缩放到宽度或高度正好适应定义背景的区域*/
+            background-repeat:no-repeat;/*图像不重复显示*/
+        }
+        table{
+            background-color: rgba(154, 22, 22, 0.5);
+            height:300px;
+        }
+        div.back {
+            padding-bottom: 23px;
+            width: 400px;
+            margin: 35px 60px;
+        }
+    </style>
+</head>
+<body>
+    <hr size="3px" color="red" width="100%" />
+    <div align="center"><h1 style="color: blue">基沃托斯</h1></div>
+    <hr size="3px" color="red" width="100%" />
+    <br><br><br>
+    <center>
+        <div class="back">
+            <div class="a">
+                <h1 style="color: white">学生信息注册</h1>
+            </div>
+            <div style="font-size: 14px;margin-left: 250px">
+                <a href="ShowLoginServlet" style="text-decoration: none;color: #FFFFFF">返回登录</a>
+            </div>
+            <div class="neirong">
+                <form action="RegisterServlet" method="post">
+                    <table border="0">
+                        <tr>
+                            <td align="left" style="color: white">姓名:</td>
+                            <td><input type="text" name="mname" placeholder="  姓名不能为空"></td>
+                        </tr>
+                        <tr>
+                            <td align="left" style="color: white">用户名:</td>
+                            <td><input type="text" name="username" placeholder="  用户名不能为空"></td>
+                        </tr>
+                        <tr>
+                            <td align="left" style="color: white">密码:</td>
+                            <td><input type="password" name="password" placeholder="  密码不能为空"></td>
+                        </tr>
+                        <tr>
+                            <td align="left" style="color: white">年级:</td>
+                            <td style="color: white">
+                                <input type="radio" value="一年级" name="grade" checked>1年级
+                                <input type="radio" value="二年级" name="grade">2年级
+                                <input type="radio" value="三年级" name="grade">3年级
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" style="color: white">年龄:</td>
+                            <td><input type="number" name="age" placeholder="  请输入年龄"></td>
+                        </tr>
+                        <tr>
+                            <td align="left" style="color: white">生日:</td>
+                            <td><input type="text" name="birthday" placeholder="  xx月x日"></td>
+                        </tr>
+                        <tr>
+                            <td align="left" style="color: white">身高:</td>
+                            <td><input type="number" name="height" placeholder="  请输入身高(cm)"></td>
+                        </tr>
+                        <tr>
+                            <td align="left" style="color: white">爱好:</td>
+                            <td><input type="text" name="hobby" placeholder="  请输入爱好"></td>
+                        </tr>
+                        <tr>
+                            <td align="left" style="color: white">社团:</td>
+                            <td><input type="number" name="club" placeholder="  若无社团默认为1"></td>
+                        </tr>
+                        <tr align="center">
+                            <td colspan="2">
+                                <input type="submit" value="提交">
+                                <input type="reset" value="取消">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <br><br><br>
+        </div>
+    </center>
+</body>
+</html>
+

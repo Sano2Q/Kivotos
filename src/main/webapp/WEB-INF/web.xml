@@ -1,0 +1,40 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>Archetype Created Web Application</display-name>
+
+  <welcome-file-list>
+    <welcome-file>student/main.html</welcome-file>
+  </welcome-file-list>
+
+  <servlet-mapping>
+    <servlet-name>MainServlet</servlet-name>
+    <url-pattern>/student/main.html</url-pattern>
+  </servlet-mapping>
+
+  <filter>
+    <filter-name>MyFilter</filter-name>
+    <filter-class>student.filter.myFilter</filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>MyFilter</filter-name>
+    <url-pattern>/CenterServlet</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>MyFilter</filter-name>
+    <url-pattern>/SelectAllActivityServlet</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>MyFilter</filter-name>
+    <url-pattern>/UpdateActivityServlet</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>MyFilter</filter-name>
+    <url-pattern>/AddActivityServlet</url-pattern>
+  </filter-mapping>
+</web-app>
