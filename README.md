@@ -2,9 +2,9 @@
 基沃托斯学生管理系统
 
 # 语言
-１．Java 
-２．Html＆ｃｓｓ＆ｊａｖａＳｃｒｉｐｔ
-３．ＭｙＳＱＬ
+1. Java 
+2. Html&CSS&JavaScript
+3. MySQL
 
 # 工具
 本项目的代码编写工具为IntelliJ IDEA 2021.1.3 (Ultimate Edition)
